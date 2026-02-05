@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Password Strength Analyzer</h1>
+            <p class="privacy-notice">Your password is never stored or sent to a server. All checks are done in your browser.</p>
+        </header>
+
+        <main>
+            <div class="password-wrapper">
+                <input type="password" id="password-input" placeholder="Enter your password">
+                <button id="toggle-password">SHOW</button>
+            </div>
+
+            <div class="strength-meter">
+                <div id="strength-bar" class="strength-bar"></div>
+            </div>
+            <p class="entropy-display">Entropy: <span id="entropy-score">0</span> bits</p>
+
+            <div id="feedback-container" class="feedback-container">
+                <h3>Password Requirements:</h3>
+                <ul id="criteria-list">
+                    <li id="length">At least 8 characters</li>
+                    <li id="uppercase">Contains an uppercase letter</li>
+                    <li id="lowercase">Contains a lowercase letter</li>
+                    <li id="number">Contains a number</li>
+                    <li id="special">Contains a special character (!@#$%^&*)</li>
+                    <li id="common">Is not a common password</li>
+                </ul>
+            </div>
+
+            <div class="educational-section">
+                <button id="toggle-education" class="collapsible">Why does this matter? <span>+</span></button>
+                <div id="education-content" class="content">
+                    <h4>Understanding Password Security</h4>
+                    <p><strong>Entropy:</strong> Measured in "bits," entropy is a way to quantify the randomness and unpredictability of your password. A higher entropy score means your password is much harder for an attacker to guess.</p>
+                    <p><strong>Brute-Force Attacks:</strong> This is a trial-and-error method where attackers use automated systems to guess every possible combination of letters, numbers, and symbols. Longer and more complex passwords increase the time required for such an attack exponentially.</p>
+                    <p><strong>Dictionary Attacks:</strong> A simpler form of brute-force, this attack uses a list of common words, phrases, and previously leaked passwords. This is why using "password123" is a very bad idea.</p>
+                    <p>Creating a strong password is the first line of defense for your digital identity.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="common-passwords.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
